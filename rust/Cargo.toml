@@ -1,0 +1,25 @@
+[package]
+name = "nizkp_benchmark"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bellman = "0.14.0"
+bls12_381 = "0.8.0"
+bulletproofs = { version = "4.0.0", features = ["yoloproofs"] }
+curve25519-dalek-ng = "4.1.1"
+ff = "0.13.0"
+merlin = "3.0.0"
+pairing = "0.23.0"
+rand = "0.8.5"
+winterfell = "0.8.1"
+blake3 = { version = "1.5.1", default-features = false }
+
+[dev-dependencies]
+criterion = { version = "0.5.1", features = ["html_reports"] }
+
+[[bench]]
+name = "mimc_bench"
+harness = false
